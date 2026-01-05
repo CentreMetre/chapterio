@@ -1,0 +1,5 @@
+MUST: the database to store when a book has been started, when its finished/stopped, the reason why it was stopped if not finished, and where it was stopped.
+MUST: the database to store when a chapter has been started, and when its finished, or if it was stopped.
+WANT: the database to store sessions of reading a chapter if a chapter isnt finished. Could also store the page stopped at.
+
+Allow the user to record when a book has been started, 
