@@ -5,14 +5,14 @@ Table books {
   id int pk
   series_id int [ref: > book_series.id]
   //type int [not null]
-  name text
+  name text [not null]
   isbn text
 }
 
 Table chapters {
   id int pk
   book_id int [not null, ref: > books.id]
-  title text
+  title text [not null]
   /* ^^ Text title excluding any number,
   e.g. 'Perfect letters' rather than 'Chapter 1 Perfect letters' (from Typography A Very Short Introduction)
   or, manga example, 
