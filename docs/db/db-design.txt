@@ -4,6 +4,7 @@
 Table books {
   id int pk
   series_id int [ref: > book_series.id]
+  universe_id int [ref: > book_universes.id]
   //type int [not null]
   name text [not null]
   isbn text
@@ -65,6 +66,7 @@ Table book_reads {
   end_time time
   finish_reason int [not null, ref: > finish_reasons.id]
   book_series_reads_id int [ref: > book_series_reads.id]
+  book_universe_reads_id int [ref: > book_universe_reads.id]
   status int [not null, ref: > reading_statuses.id]
   notes text
 }
