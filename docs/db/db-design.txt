@@ -34,11 +34,6 @@ Table book_series {
   name text
 }
 
-Table finish_reasons {
-  id int pk
-  reason text
-}
-
 Table reading_statuses {
   id int pk
   status text
@@ -51,7 +46,6 @@ Table chapter_reads {
   start_time time
   end_date date
   end_time time
-  finish_reason int [not null, ref: > finish_reasons.id]
   book_reads_id int [ref: > book_reads.id]
   status int [not null, ref: > reading_statuses.id]
   notes text
@@ -64,7 +58,6 @@ Table book_reads {
   start_time time
   end_date date
   end_time time
-  finish_reason int [not null, ref: > finish_reasons.id]
   book_series_reads_id int [ref: > book_series_reads.id]
   book_universe_reads_id int [ref: > book_universe_reads.id]
   status int [not null, ref: > reading_statuses.id]
@@ -78,7 +71,6 @@ Table book_series_reads {
   start_time time
   end_date date
   end_time time
-  finish_reason int [not null, ref: > finish_reasons.id]
   book_universe_reads_id int [ref: > book_universe_reads.id]
   status int [not null, ref: > reading_statuses.id]
   notes text
@@ -91,7 +83,6 @@ Table book_universe_reads {
   start_time time
   end_date date
   end_time time
-  finish_reason int [not null, ref: > finish_reasons.id]
   status int [not null, ref: > reading_statuses.id]
   notes text
 }
