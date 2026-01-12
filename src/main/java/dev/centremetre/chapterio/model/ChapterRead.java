@@ -5,6 +5,12 @@ import jakarta.persistence.*;
 import java.time.LocalTime;
 import java.time.LocalDate;
 
+/**
+ * A chapter read is an instance of reading a chapter.
+ *
+ * A chapter read can be part of a book read, but doesn't have to be.
+ * A chapter read is linked to the chapter itself.
+ */
 @Entity
 @Table(name = "chapter_reads")
 public class ChapterRead
@@ -26,16 +32,12 @@ public class ChapterRead
     @Column(name = "end_time")
     private LocalTime endTime;
 
-    @ManyToOne(optional = true) // null/empty = not finished yet. Must be filled to be marked as completed, e.g. with completed, or stopped reading.
-    @JoinColumn(name = "finish_reason")
-    private FinishReason finishReason;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "book_reads_id", nullable = true)
     private BookRead bookRead;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "reading_status")
+    @JoinColumn(name = "reading_status", nullable = false)
     ReadingStatus readingStatus;
 
     String notes;
