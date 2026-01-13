@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class BookUniverse
 {
     @Id
-    private int id;
+    private Integer id;
 
     private String name;
 }

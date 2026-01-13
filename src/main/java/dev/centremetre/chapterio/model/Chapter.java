@@ -20,7 +20,7 @@ import jakarta.persistence.*;
 public class Chapter
 {
     @Id
-    private int id;
+    private Integer id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_id", nullable = false)

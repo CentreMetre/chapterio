@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class ChapterRead
 {
     @Id
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "chapter_id")

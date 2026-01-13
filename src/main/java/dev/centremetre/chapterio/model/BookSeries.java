@@ -13,7 +13,7 @@ import jakarta.persistence.*;
 public class BookSeries
 {
     @Id
-    private int id;
+    private Integer id;
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "universe_id", nullable = true)

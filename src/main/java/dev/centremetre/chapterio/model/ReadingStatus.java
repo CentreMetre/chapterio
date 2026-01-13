@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class ReadingStatus
 {
     @Id
-    private int id;
+    private Integer id;
 
     private String status;
 }

@@ -16,7 +16,7 @@ import java.time.LocalTime;
 public class BookSeriesRead
 {
     @Id
-    private int id;
+    private Integer id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_series_id", nullable = false)

@@ -17,7 +17,7 @@ import jakarta.persistence.*;
 public class Book
 {
     @Id
-    private int id;
+    private Integer id;
 
     /**
      * The series the book belongs to, if any.
