@@ -26,7 +26,7 @@ public class Book
      */
     @ManyToOne(optional = true)
     @JoinColumn(name = "series_id", nullable = true)
-    private BookSeries series;
+    private Series series;
 
     /**
      * The universe the book belongs to, if any.
@@ -35,7 +35,7 @@ public class Book
      */
     @ManyToOne(optional = true)
     @JoinColumn(name = "universe_id", nullable = true)
-    private BookUniverse universe;
+    private Universe universe;
 
     /**
      * The title of the book.

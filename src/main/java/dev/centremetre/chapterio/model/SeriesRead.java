@@ -13,14 +13,14 @@ import java.time.LocalTime;
  */
 @Entity
 @Table(name = "book_series_reads")
-public class BookSeriesRead
+public class SeriesRead
 {
     @Id
     private Integer id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_series_id", nullable = false)
-    private BookSeries bookSeries;
+    private Series series;
 
     @Column(name = "start_date")
     private LocalDate startDate;
@@ -34,7 +34,7 @@ public class BookSeriesRead
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "book_reads_id", nullable = true)
-    private BookUniverseRead bookUniverseRead;
+    private UniverseRead universeRead;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "reading_status", nullable = false)

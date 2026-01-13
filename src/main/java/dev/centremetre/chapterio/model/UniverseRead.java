@@ -12,14 +12,14 @@ import java.time.LocalTime;
  */
 @Table(name = "book_universe_reads")
 @Entity
-public class BookUniverseRead
+public class UniverseRead
 {
     @Id
     private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "book_universe_id")
-    private BookUniverse bookUniverse;
+    private Universe universe;
 
     @Column(name = "start_date")
     private LocalDate startDate;

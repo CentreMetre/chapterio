@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "book_universes")
-public class BookUniverse
+public class Universe
 {
     @Id
     private Integer id;

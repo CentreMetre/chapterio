@@ -10,12 +10,12 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "book_series")
-public class BookSeries
+public class Series
 {
     @Id
     private Integer id;
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "universe_id", nullable = true)
-    private BookUniverse universe;
+    private Universe universe;
 }

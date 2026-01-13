@@ -40,7 +40,7 @@ public class BookRead
      */
     @ManyToOne(optional = true)
     @JoinColumn(name = "book_reads_id", nullable = true)
-    private BookSeriesRead seriesRead;
+    private SeriesRead seriesRead;
 
     /**
      * The universe the book belongs to, if any.
@@ -49,7 +49,7 @@ public class BookRead
      */
     @ManyToOne(optional = true)
     @JoinColumn(name = "universe_id", nullable = true)
-    private BookUniverseRead universeRead;
+    private UniverseRead universeRead;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "reading_status", nullable = false)
