@@ -13,32 +13,13 @@ import java.time.LocalTime;
  */
 @Entity
 @Table(name = "book_series_reads")
-public class SeriesRead
+public class SeriesRead extends Read
 {
-    @Id
-    private Integer id;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_series_id", nullable = false)
     private Series series;
 
-    @Column(name = "start_date")
-    private LocalDate startDate;
-    @Column(name = "start_time")
-    private LocalTime startTime;
-
-    @Column(name = "end_date")
-    private LocalDate endDate;
-    @Column(name = "end_time")
-    private LocalTime endTime;
-
     @ManyToOne(optional = true)
     @JoinColumn(name = "book_reads_id", nullable = true)
     private UniverseRead universeRead;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "reading_status", nullable = false)
-    ReadingStatus readingStatus;
-
-    String notes;
 }

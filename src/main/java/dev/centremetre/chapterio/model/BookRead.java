@@ -14,24 +14,14 @@ import java.time.LocalTime;
  */
 @Table(name = "book_reads")
 @Entity
-public class BookRead
+public class BookRead extends Read
 {
-    @Id
-    private Integer id;
-
+    /**
+     * The book that this is a read of.
+     */
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
-
-    @Column(name = "start_date")
-    private LocalDate startDate;
-    @Column(name = "start_time")
-    private LocalTime startTime;
-
-    @Column(name = "end_date")
-    private LocalDate endDate;
-    @Column(name = "end_time")
-    private LocalTime endTime;
 
     /**
      * The series the book belongs to, if any.
@@ -50,10 +40,4 @@ public class BookRead
     @ManyToOne(optional = true)
     @JoinColumn(name = "universe_id", nullable = true)
     private UniverseRead universeRead;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "reading_status", nullable = false)
-    private ReadingStatus readingStatus;
-
-    private String notes;
 }

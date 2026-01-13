@@ -12,28 +12,9 @@ import java.time.LocalTime;
  */
 @Table(name = "book_universe_reads")
 @Entity
-public class UniverseRead
+public class UniverseRead extends Read
 {
-    @Id
-    private Integer id;
-
     @ManyToOne
     @JoinColumn(name = "book_universe_id")
     private Universe universe;
-
-    @Column(name = "start_date")
-    private LocalDate startDate;
-    @Column(name = "start_time")
-    private LocalTime startTime;
-
-    @Column(name = "end_date")
-    private LocalDate endDate;
-    @Column(name = "end_time")
-    private LocalTime endTime;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "reading_status", nullable = false)
-    ReadingStatus readingStatus;
-
-    String notes;
 }

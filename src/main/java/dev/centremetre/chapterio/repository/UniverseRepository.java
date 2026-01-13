@@ -11,7 +11,7 @@ public interface UniverseRepository extends JpaRepository<Universe, Integer>
 {
     Universe getUniverseById(Integer id);
 
-    List<Universe> getAll();
+//    List<Universe> getAll();
 
     Universe getUniverseByName(String name);
 }
