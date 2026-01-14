@@ -14,11 +14,15 @@ import jakarta.persistence.*;
  * | 1          | 1             | <br>
  * | 2          | 1.5           | <br>
  * | 3          | 2             |
+ *
+ * 'Special' case for manga: the display will be the total, and the index will be of just that volume (book).
  */
 @Entity
 @Table(name = "chapters")
 public class Chapter
 {
+    // Chapters could just be auto incrementing when it has the same book id.
+
     @Id
     private Integer id;
 
